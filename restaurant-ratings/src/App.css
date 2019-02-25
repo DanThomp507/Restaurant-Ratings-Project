@@ -1,0 +1,23 @@
+body {
+  font-family: broadway;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+h1 {
+  text-align: center;
+}
+.welcome-page {
+  display: block;
+  align-content: center;
+  text-align: center;
+}
+.restaurant-list {
+  text-align: center;
+}
+.search-form {
+  display: block;
+  align-content: center;
+  text-align: center;
+}
