@@ -6,26 +6,28 @@ import Welcome from './components/Welcome.jsx';
 import RestaurantList from './components/RestaurantList.jsx';
 import Form from './components/SearchForm.jsx';
 import Nav from './components/Nav.jsx';
+import Footer from './components/Footer.jsx';
+import About from './components/About.jsx';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      restaurants: []
+      restaurantData: []
     }
   }
   async componentDidMount() {
     const restaurants = await fetchRestaurants();
     console.log(restaurants);
     this.setState({
-    restaurants: restaurants
+    restaurantData: restaurants
     })
   }
   async handleSubmit(restaurant){
     try {
       let grade = await fetchRestaurants();
       this.setState({
-        restaurants: grade
+        restaurantData: grade
       })
     }
     catch(error){
@@ -39,11 +41,13 @@ class App extends Component {
       <Route exact path="/" render={Welcome}/>
       <Route path="/restaurantList" render={(props) => (
         <RestaurantList
-          restaurants={this.state.restaurants} />
+          restaurants={this.state.restaurantData} />
       )} />
       <Route path ="/form" render={(props) => (
         <Form handleSubmit={this.handleSubmit} />
       )} />
+      <Route path="/about" render={About} />
+      <Footer />
       </div>
     );
   }

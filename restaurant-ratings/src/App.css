@@ -1,7 +1,7 @@
 body {
   font-family: broadway;
 }
-nav {
+.nav {
   display: flex;
   justify-content: space-around;
 }
@@ -13,6 +13,14 @@ h1 {
   align-content: center;
   text-align: center;
 }
+.welcome-image {
+  display: block;
+  width: 650px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 10px 10px 10px;
+}
 .restaurant-list {
   text-align: center;
 }
@@ -20,4 +28,17 @@ h1 {
   display: block;
   align-content: center;
   text-align: center;
+}
+.content-wrap {
+  padding-bottom: 60px;
+}
+.footer {
+  text-align: center;
+  position: relative;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: lightblue;
 }

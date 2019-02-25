@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 class Form extends Component {
   constructor (props) {
@@ -22,7 +23,7 @@ class Form extends Component {
     <h1 className="search"> Look up your restaurant's inspection history</h1>
       <input className="input"type="text" placeholder="Enter a Restaurant Name"
         value={this.state.restaurant} onChange={this.handleChange}></input>
-        <button className="button">Search</button>
+        <button className="button-display"><Link to="/restaurantlist">Find a Restaurant</Link></button>
       </form>
     )
   }
