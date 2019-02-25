@@ -24,7 +24,6 @@ class App extends Component {
     console.log(restaurants);
     this.setState({
     restaurantData: restaurants
-
     })
   }
   async handleSubmit(search){
@@ -42,7 +41,6 @@ class App extends Component {
     return (
       <div className="App">
       <Nav />
-      <Link to="form/result"></Link>
       <Route exact path="/" render={Welcome}/>
       <Route path ="/form" render={(props) => (
         <SearchForm
@@ -50,6 +48,7 @@ class App extends Component {
         handleSubmit={this.handleSubmit}
         restaurants= {this.state.restaurantData}/>
       )} />
+      <Link to="form/result"></Link>
       <Route path ="/form/result" render={(props) => (
         <RestaurantInfo
         restaurants={this.state.restaurantData} />

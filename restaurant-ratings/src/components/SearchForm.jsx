@@ -23,7 +23,7 @@ class SearchForm extends Component {
     <h1>Look up your restaurant's inspection history</h1>
     <input type="text"
            className="restaurant-search"
-           placeholdder="Enter a Restaurant Name"
+           placeholder="Enter a Restaurant Name"
            name="name"
            onChange={this.handleChange}
            value={this.state.restaurantSearch}
