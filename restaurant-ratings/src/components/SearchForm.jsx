@@ -1,31 +1,37 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 
-class Form extends Component {
-  constructor (props) {
+class SearchForm extends Component {
+  constructor(props){
     super(props);
     this.state = {
-      restaurant: ''
+      restaurantSearch: '',
     }
     this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(event) {
-    this.setState({
-      restaurant: event.target.value
-    })
+    }
+     handleChange(event) {
+      this.setState({
+        restaurantSearch: event.target.value,
+      });
   }
   render(){
   return (
-    <form className="form-field"onSubmit ={(event) => {
+    <form onSubmit = {(event) => {
       event.preventDefault();
-      this.props.handleSubmit(this.state.restaurant)}
+      this.props.handleSubmit(this.state.restaurantSearch)}
     }>
-    <h1 className="search"> Look up your restaurant's inspection history</h1>
-      <input className="input"type="text" placeholder="Enter a Restaurant Name"
-        value={this.state.restaurant} onChange={this.handleChange}></input>
-        <button className="button-display"><Link to="/restaurantlist">Find a Restaurant</Link></button>
-      </form>
+      <div className="search-form">
+    <h1>Look up your restaurant's inspection history</h1>
+    <input type="text"
+           className="restaurant-search"
+           placeholdder="Enter a Restaurant Name"
+           name="name"
+           onChange={this.handleChange}
+           value={this.state.restaurantSearch}
+          />
+    <button className="button">Find a Restaurant</button>
+      </div>
+    </form>
     )
   }
 }
-export default Form;
+export default SearchForm;

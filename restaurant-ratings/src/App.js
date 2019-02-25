@@ -1,31 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route} from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import {fetchRestaurants} from './services/api-helper.js';
 import Welcome from './components/Welcome.jsx';
-import RestaurantList from './components/RestaurantList.jsx';
-import Form from './components/SearchForm.jsx';
 import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
 import About from './components/About.jsx';
+import SearchForm from './components/SearchForm.jsx';
+import RestaurantInfo from './components/RestaurantInfo.jsx';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      restaurantData: []
+      restaurantData: [],
+
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
   async componentDidMount() {
     const restaurants = await fetchRestaurants();
     console.log(restaurants);
     this.setState({
     restaurantData: restaurants
+
     })
   }
-  async handleSubmit(restaurant){
+  async handleSubmit(search){
     try {
-      let grade = await fetchRestaurants();
+      let grade = await fetchRestaurants(search);
       this.setState({
         restaurantData: grade
       })
@@ -38,13 +42,17 @@ class App extends Component {
     return (
       <div className="App">
       <Nav />
+      <Link to="form/result"></Link>
       <Route exact path="/" render={Welcome}/>
-      <Route path="/restaurantList" render={(props) => (
-        <RestaurantList
-          restaurants={this.state.restaurantData} />
-      )} />
       <Route path ="/form" render={(props) => (
-        <Form handleSubmit={this.handleSubmit} />
+        <SearchForm
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        restaurants= {this.state.restaurantData}/>
+      )} />
+      <Route path ="/form/result" render={(props) => (
+        <RestaurantInfo
+        restaurants={this.state.restaurantData} />
       )} />
       <Route path="/about" render={About} />
       <Footer />
