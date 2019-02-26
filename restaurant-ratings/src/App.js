@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link } from "react-router-dom";
-import {fetchRestaurants} from './services/api-helper.js';
+import fetchRestaurants from './services/api-helper.js';
 import Welcome from './components/Welcome.jsx';
 import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
@@ -13,22 +13,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      restaurantData: [],
-
+      restaurantData: '',
     }
-    this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  }
-  async componentDidMount() {
-    const restaurants = await fetchRestaurants();
-    console.log(restaurants);
-    this.setState({
-    restaurantData: restaurants
-    })
-  }
-  async handleSubmit(search){
+  async handleSubmit(restaurantSearch){
     try {
-      let grade = await fetchRestaurants(search);
+      let grade = await fetchRestaurants(restaurantSearch);
       this.setState({
         restaurantData: grade
       })
@@ -37,6 +29,12 @@ class App extends Component {
       console.error(error);
     }
   }
+  async refreshRestaurant(){
+  const restaurant = await fetchRestaurants();
+  this.setState({
+  })
+  return restaurant;
+}
   render() {
     return (
       <div className="App">
@@ -46,12 +44,12 @@ class App extends Component {
         <SearchForm
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
-        restaurants= {this.state.restaurantData}/>
+        restaurantData={this.state.restaurantData}/>
       )} />
-      <Link to="form/result"></Link>
+      <Link to="/form/result"></Link>
       <Route path ="/form/result" render={(props) => (
         <RestaurantInfo
-        restaurants={this.state.restaurantData} />
+        restaurantData={this.state.restaurantData}/>
       )} />
       <Route path="/about" render={About} />
       <Footer />

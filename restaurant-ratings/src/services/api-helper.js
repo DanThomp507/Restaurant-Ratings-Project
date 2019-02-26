@@ -8,9 +8,10 @@ const fetchRestaurants = async (search) => {
     const resp = await axios(`${BASE_URL}?$q=${search}`)
     console.log(resp);
     return resp.data;
-  } catch(e) {
+  }
+    catch(e) {
     console.log('got a problem: ', e);
     return [];
   }
 }
-export { fetchRestaurants }
+export default fetchRestaurants; 

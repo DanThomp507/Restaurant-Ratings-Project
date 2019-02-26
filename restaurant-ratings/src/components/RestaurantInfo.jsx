@@ -1,17 +1,20 @@
 import React from 'react';
 
-export default (props) => {
-  const { restaurants } = props;
+const RestaurantInfo = (props) => {
   return (
-    <div className="restaurant">
-      {restaurants.map(el => (
-        <div className="restaurant-list">
-        <h1>Restaurant Name: {el.dba}</h1>
-        <h2>Cuisine: {el.cuisine_description}</h2>
-        <h2>Grade: {el.grade}</h2>
-        <h2>Graded Date: {el.grade_date}</h2>
+    <div className="restaurant-info">
+    {
+        props.restaurantData ?
+        <div className="restaurant-data">
+        <h1>Restaurant Name: {props.restaurantData.dba}</h1>
+        <h2>Cuisine: {props.restaurantData.cuisine_description}</h2>
+        <h2>Grade: {props.restaurantData.grade}</h2>
+        <h2>Graded Date: {props.restaurantData.grade_date}</h2>
         </div>
-      ))}
+        :
+        <div></div>
+      }
     </div>
   )
 }
+export default RestaurantInfo;
