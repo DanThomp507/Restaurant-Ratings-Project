@@ -13,14 +13,21 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      restaurantData: '',
+      restaurantData: null,
     }
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.refreshRestaurant = this.refreshRestaurant.bind(this);
   }
-
-  async handleSubmit(restaurantSearch){
+  // async componentDidMount(search) {
+  //   const restaurants = await fetchRestaurants(search);
+  //   console.log(restaurants);
+  //   this.setState({
+  //   restaurantData: restaurants
+  //   })
+  // }
+  async handleSubmit(search){
     try {
-      let grade = await fetchRestaurants(restaurantSearch);
+      let grade = await fetchRestaurants(search);
       this.setState({
         restaurantData: grade
       })
@@ -39,17 +46,18 @@ class App extends Component {
     return (
       <div className="App">
       <Nav />
+      <Link to="/form/result"></Link>
       <Route exact path="/" render={Welcome}/>
       <Route path ="/form" render={(props) => (
         <SearchForm
-        handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
-        restaurantData={this.state.restaurantData}/>
+        handleChange={this.handlechange}
+        restaurants={this.state.restaurantData}
+      />
       )} />
-      <Link to="/form/result"></Link>
-      <Route path ="/form/result" render={(props) => (
+      <Route path ="/form/result" render={() => (
         <RestaurantInfo
-        restaurantData={this.state.restaurantData}/>
+        restaurantData ={this.state.restaurantData}/>
       )} />
       <Route path="/about" render={About} />
       <Footer />

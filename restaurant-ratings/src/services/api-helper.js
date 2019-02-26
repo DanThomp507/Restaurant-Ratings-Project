@@ -11,7 +11,6 @@ const fetchRestaurants = async (search) => {
   }
     catch(e) {
     console.log('got a problem: ', e);
-    return [];
   }
 }
-export default fetchRestaurants; 
+export default fetchRestaurants;

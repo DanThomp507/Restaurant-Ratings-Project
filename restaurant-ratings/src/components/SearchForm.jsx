@@ -5,29 +5,29 @@ class SearchForm extends Component {
   constructor(props){
     super(props);
     this.state = {
-      restaurantSearch: '',
+      search: '',
     }
     this.handleChange = this.handleChange.bind(this);
   }
      handleChange(event) {
       this.setState({
-        restaurantSearch: event.target.value
+        search: event.target.value
     });
   }
   render() {
   return (
     <form onSubmit = {(event) => {
       event.preventDefault();
-      this.props.handleSubmit(this.state.restaurantSearch)}
+      this.props.handleSubmit(this.state.search)}
     }>
     <div className="search-form">
     <h1 className="search-header">Look up your restaurant's inspection history</h1>
     <input type="text"
-           className="restaurant-search"
+           className="input"
            placeholder="Enter a Restaurant Name"
            name="name"
+           value={this.state.search}
            onChange={this.handleChange}
-           value={this.state.restaurantSearch}
            />
     <button className="button"><Link to="/form/result"
             style={{ textDecoration: 'none', color: 'white' }}>
