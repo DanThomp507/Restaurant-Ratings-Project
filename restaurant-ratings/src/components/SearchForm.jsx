@@ -25,6 +25,8 @@ class SearchForm extends Component {
     }>
     <div className="search-form">
     <h1 className="search-header">Look up your restaurant's inspection history</h1>
+    <p>Enter a restaurant name to discover its inspection history.</p>
+    <p>You can also search by borough, zipcode, street name, and phone number</p>
     <input type="text"
            className="input"
            placeholder="Enter a Restaurant Name"
