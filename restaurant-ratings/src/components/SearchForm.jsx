@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+
 class SearchForm extends Component {
   constructor(props){
     super(props);
     this.state = {
       search: '',
+      data: []
+
     }
     this.handleChange = this.handleChange.bind(this);
   }

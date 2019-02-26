@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      restaurantData: null,
+      restaurantData: []
     }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.refreshRestaurant = this.refreshRestaurant.bind(this);
@@ -57,7 +57,7 @@ class App extends Component {
       )} />
       <Route path ="/form/result" render={() => (
         <RestaurantInfo
-        restaurantData ={this.state.restaurantData}/>
+        restaurants={this.state.restaurantData}/>
       )} />
       <Route path="/about" render={About} />
       <Footer />

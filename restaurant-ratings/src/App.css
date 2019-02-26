@@ -43,9 +43,10 @@ h1 {
 }
 .restaurant-list {
   text-align: center;
+  border: 2px solid black;
 }
 .search-header {
-  font-size: 40px;
+  font-size: 30px;
 }
 .search-form {
   display: block;
