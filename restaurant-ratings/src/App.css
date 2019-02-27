@@ -92,9 +92,17 @@ input {
 }
 .about-header {
   font-size: 45px;
+  color: white;
+  background: rgb(0, 0, 0); /* fallback color */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
 }
-.about-p {
+.about-article{
   font-size: 25px;
+  color: white;
+  background: rgb(0, 0, 0); /* fallback color */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
 }
 
 .footer {
