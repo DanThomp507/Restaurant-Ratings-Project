@@ -10,10 +10,6 @@ const Welcome = () => {
       style={{ textDecoration: 'none', color: 'white' }}>
       Find a Restaurant
       </Link></button>
-      <img className="welcome-image"
-           src="https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-           alt=""
-            />
     </div>
   )
 }
