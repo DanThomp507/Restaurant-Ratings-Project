@@ -16,13 +16,13 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
     color: black;
 }
 
 h2 {
-    font-size: 34px;
+    font-size: 30px;
 }
 
 .welcome-page {
@@ -32,7 +32,7 @@ h2 {
 }
 
 .welcome-p {
-    font-size: 30px;
+    font-size: 28px;
     color: black;
     bottom: 100px;
     font-weight: bold;
@@ -62,7 +62,7 @@ h2 {
 }
 
 .restaurant-header {
-    font-size: 45px;
+    font-size: 40px;
     color: black;
 }
 
@@ -102,10 +102,11 @@ input {
 
 .about-header {
     color: white;
+    font-style: 40px;
 }
 
 .about {
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.7);
@@ -124,4 +125,105 @@ input {
     background: black;
     color: white;
     font-size: 20px;
+}
+@media screen and (min-width: 300px) and (max-width: 1000px){
+  body {
+      font-family: futura;
+      background-image: url('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+      text-align: center;
+  }
+  .nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 50px;
+      border-bottom: 6px solid black;
+      font-size: 14px;
+      text-decoration-style: none;
+      background-color: black;
+  }
+  .welcome-page {
+      display: block;
+      align-content: center;
+      text-align: center;
+  }
+  h1 {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: black;
+  }
+
+  h2 {
+      font-size: 14px;
+  }
+
+  .button-display {
+      width: 200px;
+      height: 60px;
+      border: 2px solid #000033;
+      border-radius: 5px;
+      font-size: 24px;
+      font-weight: bold;
+      background-color: black;
+      margin-top: 10px;
+      color: white;
+  }
+  .restaurant-list {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: solid 2px black;
+      margin: 50px;
+      float: none;
+      background-color: #b29758;
+  }
+
+  .restaurant-header {
+      font-size: 30px;
+      color: black;
+  }
+
+  .search-header {
+      font-size: 24px;
+  }
+
+  .search-p {
+      font-size: 20px;
+  }
+
+  .search-form {
+      display: block;
+      align-content: center;
+      text-align: center;
+  }
+
+  .about-header {
+      color: white;
+      font-size: 24px;
+  }
+
+  .about {
+      font-size: 20px;
+      color: white;
+      background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+  }
+
+  .footer {
+      border-top: 6px solid black;
+      text-align: center;
+      position: fixed;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      background: black;
+      color: white;
+      font-size: 14px;
+  }
+
 }
