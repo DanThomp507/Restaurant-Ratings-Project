@@ -1,120 +1,127 @@
 body {
-  font-family: futura;
-  background-image: url('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    font-family: futura;
+    background-image: url('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 }
+
 .nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 150px;
-  border-bottom: 6px solid black;
-  font-size: 24px;
-  text-decoration-style: none;
-  background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    border-bottom: 6px solid black;
+    font-size: 30px;
+    text-decoration-style: none;
+    background-color: black;
 }
+
 h1 {
-  text-align: center;
-  font-size: 80px;
-  font-weight: bold;
-  color: black;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: black;
 }
+
+h2 {
+    font-size: 34px;
+}
+
 .welcome-page {
-  display: block;
-  align-content: center;
-  text-align: center;
-  font-size: 24px;
+    display: block;
+    align-content: center;
+    text-align: center;
 }
+
 .welcome-p {
-  font-size: 30px;
-  top: 30px;
+    font-size: 30px;
+    color: black;
+    bottom: 100px;
+    font-weight: bold;
 }
-.welcome-image {
-  display: block;
-  width: 650px;
-  height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px 10px 10px 10px;
-}
+
 .button-display {
-  width: 200px;
-  height: 60px;
-  border: 2px solid #000033;
-  border-radius: 5px;
-  font-size: 24px;
-  font-weight: bold;
-  background-color: black;
-  margin-top: 10px;
-  color: white;
+    width: 200px;
+    height: 60px;
+    border: 2px solid #000033;
+    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: black;
+    margin-top: 10px;
+    color: white;
 }
+
 .restaurant-list {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: solid 2px black;
-  margin: 50px;
-  float: none;
-  background-color: #b29758;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 2px black;
+    margin: 50px;
+    float: none;
+    background-color: #b29758;
 }
+
 .restaurant-header {
-font-size: 45px;
-color: black;
+    font-size: 45px;
+    color: black;
 }
+
 .search-header {
-  font-size: 45px;
+    font-size: 45px;
 }
+
 .search-p {
-  font-size: 32px;
+    font-size: 32px;
 }
+
 .search-form {
-  display: block;
-  align-content: center;
-  text-align: center;
+    display: block;
+    align-content: center;
+    text-align: center;
 }
+
 input {
-  height: 40px;
-  width: 200px;
-  margin: 5px;
-  border: solid 1px black;
-  border-radius: 5px;
-  padding-left: 5px;
-  box-sizing:  border-box;
+    height: 40px;
+    width: 300px;
+    margin: 5px;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding-left: 5px;
+    box-sizing: border-box;
 }
+
 .button {
-  width: 150px;
-  height: 40px;
-  background-color: black;
-  border: 2px solid #000033;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
+    width: 150px;
+    height: 40px;
+    background-color: black;
+    border: 2px solid #000033;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
 }
+
 .about-header {
-  font-size: 45px;
-  color: white;
-  background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
+    color: white;
 }
-.about-article{
-  font-size: 25px;
-  color: white;
-  background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
+
+.about {
+    font-size: 25px;
+    color: white;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
 }
 
 .footer {
-  border-top: 6px solid black;
-  text-align: center;
-  position: fixed;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
-  background: black;
-  color: white;
-  font-size: 20px;
+    border-top: 6px solid black;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: black;
+    color: white;
+    font-size: 20px;
 }
