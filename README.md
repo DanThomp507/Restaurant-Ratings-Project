@@ -1,49 +1,82 @@
-## Project 2 : Restaurant Ratings Application
+## Project 2 : Find Dining
 
-New Yorkers love to eat out. Part of the dining experience is ensuring that
-your destination has the highest health and safety standards. I am going to
-create a simple application that will allow New Yorkers to search
+With over 24,000 restaurants in New York City, it's a well-known fact that New
+Yorkers love to eat out. Part of the dining experience is ensuring that
+your destination has the highest health and safety standards. Before entering
+a restaurant, it's safe to say that most New Yorkers check its grade (hoping
+that it's an A).
+
+I have created a simple application that allows New Yorkers to search
 for restaurants and their respective inspection grades (these grades are
 carried out on a scale from A to C, A being the highest and most desirable
-while C indicates a lesser standard).
+while C indicates a lesser standard). I have utilized the New York City
+Department of Health and Mental Hygiene's Restaurant Inspection Results API
+for this application.
 
-I am going to utilize the New York City Department of Health and
-Mental Hygiene's Restaurant Inspection Results API for this application.
+Users can search for a particular restaurant by its name and phone number.
+The results of this search will display the restaurant's complete inspection
+history, showing valuable information such as: grade, if the restaurant has
+any violations cited by the NYC DOHMH, and the severity and category
+of these violations.
 
 ## Component Hierarchy
 
 
-## What problems will I encounter?
-I think that the difficulty will be ensuring that the different components
-function smoothly. For example, the user will arrive to the welcome page. There,
-they will click a button that directs them to the form page, where they can
-search for a restaurant and get its rating and other details.
-
-I also think that I will need to ensure that it's styled well, as this will
-improve the user experience. When making an application, it's important for it
-to be both functional and presentable.
-
-## How will I solve these problems?
-Regarding the styling of the application, I will do some research and look at
-how other applications are styled. I want to make sure both my form component
-and the restaurant information component are easy-to-read and look good.
-
 ## Link to API
-https://data.cityofnewyork.us/resource/9w7m-hzhe.json
+https://data.cityofnewyork.us/resource/9w7m-hzhe
 
 ## MVP
-By the end of the week, I hope to have an application with the following:
+My application contains the following:
 
 + A landing page with a button (which links to a search form)
-+ A search form that allows the user to look up their restaurant by name
-+ A Restaurant detail page that displays the restaurant name, the type of
-cuisine, the letter grade it received, and the date of inspection/the date
-the grade was awarded
++ A search form that allows the user to look up their restaurant by name and
+phone number
++ The search form also allows the user to conduct more general restaurant
+searches by zipcode, borough, and street name
++ A results page that displays the restaurant name, the grade it received,
+the year that particular inspection was carried out, the nature/severity of the
+violations, and the description of the violations
++ An about page explaining the importance of maintaining health and safety
+standards at restaurants across New York and the practicality of the application
 
 ## Post-MVP
-After I achieve my MVP, I hope to add the following to my application:
+I plan on adding the following to my application:
 
-+ A more complex form page where the user can look up restaurant inspection
-results by borough or zipcode
-+ I want to add a map that displays the specified restaurant's location
-(which would require Google Maps API)
++ A map that displays the specified restaurant's location alongside the
+inspection history
++ A map page that locates all the restaurants in the API and allows the user
+to access certain information
++ A function that only displays the most recent inspection and renders it
++ A button underneath the most recent inspection result that allows the user
+to access the complete inspection history
+
+## Code Snippet
+
+```
+import React from 'react';
+
+const RestaurantInfo = (props) => {
+  const {restaurants} = props;
+  return (
+    <div className="restaurant-info">
+    {
+        restaurants.map((el, i) => (
+        <div className="restaurant-list" key={i}>
+        {el.dba && <h1 className="restaurant-header">{el.dba}</h1>}
+        {el.grade && <h2>Grade: {el.grade}</h2>}
+        {el.grade_date && <h2>Grade Date: {parseFloat(el.grade_date)}</h2>}
+        {el.inspection_type && <h2>Type of Inspection: {el.inspection_type}</h2>}
+        {el.action && <h2>{el.action}</h2>}
+        {el.violation_description && <h3>{el.violation_description}</h3>}
+        </div>
+      ))}
+    </div>
+  )
+}
+export default RestaurantInfo;
+```
+This is the component in my app that maps through the API and returns
+the specified information, which includes: restaurant name, grade, grade date,
+type of inspection, and the violation description. I also make use of conditional
+rendering to ensure that if there is no particular data for any one of the
+categories, it doesn't render.
