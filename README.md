@@ -19,6 +19,8 @@ history, showing valuable information such as: grade, if the restaurant has
 any violations cited by the NYC DOHMH, and the severity and category
 of these violations.
 
+Access Find Dining here: http://find-dining.surge.sh/
+
 ## Component Hierarchy
 
 
@@ -46,7 +48,7 @@ I plan on adding the following to my application:
 inspection history
 + A map page that locates all the restaurants in the API and allows the user
 to access certain information
-+ A function that only displays the most recent inspection and renders it
++ A function that only displays the most recent inspection 
 + A button underneath the most recent inspection result that allows the user
 to access the complete inspection history
 
