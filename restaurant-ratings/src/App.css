@@ -1,5 +1,6 @@
 body {
     font-family: futura;
+    background-size: cover;
     background-image: url('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
 }
 
@@ -22,7 +23,7 @@ h1 {
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .welcome-page {
@@ -62,22 +63,28 @@ h2 {
 }
 
 .restaurant-header {
-    font-size: 40px;
+    font-size: 36px;
     color: black;
 }
 
 .search-header {
     font-size: 45px;
+    color: white;
 }
 
 .search-p {
-    font-size: 32px;
+  color: white;
+  font-size: 24px;
 }
 
 .search-form {
     display: block;
     align-content: center;
     text-align: center;
+    color: white;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
 }
 
 input {
@@ -121,12 +128,13 @@ input {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 100px;
+    height: 85px;
     background: black;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 40px;
 }
-@media screen and (min-width: 300px) and (max-width: 1000px){
+@media screen and (min-width: 300px) and (max-width: 1000px) {
   body {
       font-family: futura;
       background-image: url('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
@@ -149,7 +157,7 @@ input {
   }
   h1 {
       text-align: center;
-      font-size: 30px;
+      font-size: 60px;
       font-weight: bold;
       color: black;
   }
@@ -225,5 +233,4 @@ input {
       color: white;
       font-size: 14px;
   }
-
 }
