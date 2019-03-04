@@ -21,10 +21,14 @@ of these violations.
 
 Access Find Dining here: http://find-dining.surge.sh/
 
-## Component Hierarchy
+## Component Hierarchy and Wireframes
+
+https://github.com/DanThomp507/Restaurant-Ratings-Project/blob/master/restaurant-ratings/src/images/Find-Dining-Component-Hierarchy.jpg "Component Hierarchy"
 
 
 ## Link to API
+
+New York City Department of Health and Mental Hygiene API
 https://data.cityofnewyork.us/resource/9w7m-hzhe
 
 ## MVP
@@ -44,11 +48,11 @@ standards at restaurants across New York and the practicality of the application
 ## Post-MVP
 I plan on adding the following to my application:
 
-+ A map that displays the specified restaurant's location alongside the
-inspection history
++ A line graph that displays the specified restaurant's recent grade history alongside
+the inspection history
 + A map page that locates all the restaurants in the API and allows the user
 to access certain information
-+ A function that only displays the most recent inspection 
++ A function that only displays the most recent inspection
 + A button underneath the most recent inspection result that allows the user
 to access the complete inspection history
 
