@@ -12,4 +12,15 @@ const fetchRestaurants = async (search) => {
     console.log('got a problem: ', e);
   }
 }
-export default fetchRestaurants;
+
+const fetchChartData = async (search) => {
+  try {
+    const resp = await axios(`${BASE_URL}?$q=${search}`)
+    console.log(resp)
+    return resp.data;
+  }
+  catch(e) {
+  console.log('got a problem: ', e);
+}
+}
+export { fetchRestaurants, fetchChartData }

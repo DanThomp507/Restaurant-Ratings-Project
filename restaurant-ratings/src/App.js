@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link } from "react-router-dom";
-import fetchRestaurants from './services/api-helper.js';
+import {fetchRestaurants} from './services/api-helper.js';
 import Welcome from './components/Welcome.jsx';
 import Nav from './components/Nav.jsx';
 import Footer from './components/Footer.jsx';
@@ -10,32 +10,34 @@ import SearchForm from './components/SearchForm.jsx';
 import RestaurantInfo from './components/RestaurantInfo.jsx';
 import Map from './components/Map.jsx';
 
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      restaurantData: []
+      restaurantData: [],
     }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.refreshRestaurant = this.refreshRestaurant.bind(this);
   }
-  async componentDidMount(search) {
+  async componentDidMount(search, chart) {
     const restaurants = await fetchRestaurants(search);
     this.setState({
-    restaurantData: restaurants
+    restaurantData: restaurants,
     })
   }
   async handleSubmit(search){
     try {
       let grade = await fetchRestaurants(search);
       this.setState({
-        restaurantData: grade
+        restaurantData: grade,
       })
     }
     catch(error){
       console.error(error);
     }
   }
+
 
   async refreshRestaurant(){
   const restaurant = await fetchRestaurants();

@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const RestaurantInfo = (props) => {
   const {restaurants} = props;
   return (
