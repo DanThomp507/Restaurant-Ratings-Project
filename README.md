@@ -25,6 +25,9 @@ Access Find Dining here: http://find-dining.surge.sh/
 
 [Component Hierarchy](https://github.com/DanThomp507/Restaurant-Ratings-Project/blob/master/restaurant-ratings/src/images/Find-Dining-Component-Hierarchy.jpg)
 
+[Wireframe 1](https://github.com/DanThomp507/Restaurant-Ratings-Project/blob/master/restaurant-ratings/src/images/Find-Dining-Wireframe-1.jpg)
+
+[Wireframe 2](https://github.com/DanThomp507/Restaurant-Ratings-Project/blob/master/restaurant-ratings/src/images/Find-Dining-Wireframe-2.jpg)
 
 ## Link to API
 
