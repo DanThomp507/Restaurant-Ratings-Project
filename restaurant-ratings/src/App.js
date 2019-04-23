@@ -8,7 +8,7 @@ import Footer from './components/Footer.jsx';
 import About from './components/About.jsx';
 import SearchForm from './components/SearchForm.jsx';
 import RestaurantInfo from './components/RestaurantInfo.jsx';
-import Map from './components/Map.jsx';
+import SimpleMap from './components/Map.jsx';
 
 
 class App extends Component {
@@ -20,11 +20,11 @@ class App extends Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.refreshRestaurant = this.refreshRestaurant.bind(this);
   }
-  async componentDidMount(search, chart) {
+  async componentDidMount(search) {
     const restaurants = await fetchRestaurants(search);
     this.setState({
     restaurantData: restaurants,
-    })
+    });
   }
   async handleSubmit(search){
     try {
@@ -37,8 +37,6 @@ class App extends Component {
       console.error(error);
     }
   }
-
-
   async refreshRestaurant(){
   const restaurant = await fetchRestaurants();
   this.setState({
@@ -62,7 +60,13 @@ class App extends Component {
         <RestaurantInfo
         restaurants={this.state.restaurantData}/>
       )} />
-      <Route path ="/map" render={Map}/>
+      <Route path ="/map" render={(props) => (
+        <SimpleMap
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handlechange}
+          results={this.state.mapSearch}
+          />
+        )}/>
       <Route path="/about" render={About} />
       <Footer />
       </div>
