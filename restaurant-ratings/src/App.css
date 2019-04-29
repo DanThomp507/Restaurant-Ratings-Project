@@ -143,6 +143,7 @@ input {
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
+    margin-bottom: 25vh;
 }
 
 .footer {
