@@ -166,6 +166,7 @@ input {
       font-family: futura;
       background-image: url('https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
       background-size: cover;
+      background-attachment: fixed;
       text-align: center;
   }
   .nav {
@@ -241,7 +242,7 @@ input {
   }
 
   .about {
-      font-size: 20px;
+      font-size: 18px;
       color: white;
       background: rgb(0, 0, 0);
       background: rgba(0, 0, 0, 0.7);
